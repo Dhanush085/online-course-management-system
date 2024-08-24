@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Management System</title>
+    <link rel="stylesheet" href="Course.css">
+    <script src="Course.js" defer></script>
+    <script src="Registration.js" defer></script> <!-- Add this line for the registration script -->
+</head>
+
+<body>
+    <div class="container" id="registration-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <input type="text" id="registerName" placeholder="Full Name" required>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <select id="registerGender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="tel" id="registerPhone" placeholder="Phone" required>
+            <textarea id="registerAddress" placeholder="Address" required></textarea>
+            <button type="button" onclick="register()">Register</button>
+        </form>
+    </div>
+    <div id="registration-success-container" class="container" style="display: none;">
+        <h2>Registration Successful</h2>
+        <p>You have successfully registered, <span id="registeredUsername"></span>!</p>
+        <button onclick="showCourses()">Continue</button>
+    </div>
+
+    <div id="courses-container" class="container" style="display: none;">
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <h3>Available Courses:</h3>
+        <select id="courseSelect">
+            <option value="">Select a course</option>
+        </select>
+        <button onclick="selectCourse()">Enter Course</button>
+    </div>
+
+    <div id="videos-container" class="container" style="display: none;">
+        <h2><span id="selectedCourseName"></span> Videos</h2>
+        <p class="cost">Cost: $<span id="selectedCourseCost"></span></p>
+        <ul id="videosList"></ul>
+    </div>
+
+</body>
+
+</html>
